@@ -59,7 +59,31 @@ let person3 = {
     },
     job:{
         name:"programador",
-        exp:15
+        exp:15,
+        work:function(){
+            console.log("trabaja")
+        }
     }
 }
 console.log(person3)
+console.log(person3.name)
+console.log(person3.job.exp)
+person3.job.work()
+
+//igualdad de objetos
+let person4 = {
+    name:"bairs moiuies",
+    alias:"el brais",
+    mail:"mail@mail.com"
+}
+
+console.log(person)
+console.log(person4)
+
+console.log(person == person4)
+console.log(person4 == person4)
+
+
+console.log(person === person4)
+
+console.log(person === person4)
