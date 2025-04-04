@@ -40,9 +40,9 @@ console.log(person)
 
 let person2 = {
     name: "jamon",
-    age:29,
-    alias:"comida rica",
-    walk: function (){
+    age: 29,
+    alias: "comida rica",
+    walk: function () {
         console.log("la persona camina")
     }
 }
@@ -52,15 +52,15 @@ console.log(person2.walk())
 
 let person3 = {
     name: "jamon",
-    age:29,
-    alias:"comida rica",
-    walk: function (){
+    age: 29,
+    alias: "comida rica",
+    walk: function () {
         console.log("la persona camina")
     },
-    job:{
-        name:"programador",
-        exp:15,
-        work:function(){
+    job: {
+        name: "programador",
+        exp: 15,
+        work: function () {
             console.log("trabaja")
         }
     }
@@ -72,9 +72,9 @@ person3.job.work()
 
 //igualdad de objetos
 let person4 = {
-    name:"bairs moiuies",
-    alias:"el brais",
-    mail:"mail@mail.com"
+    name: "bairs moiuies",
+    alias: "el brais",
+    mail: "mail@mail.com"
 }
 
 console.log(person)
@@ -87,3 +87,47 @@ console.log(person4 == person4)
 console.log(person === person4)
 
 console.log(person === person4)
+
+//iteracion
+for (let value in person4) {
+    console.log(value + ": " + person4[value])
+    console.log(person4[value])
+}
+
+
+//con IN, hacemos referencia a un valor dentro de un objeto
+//ahora bien, si queremos un valor dentro de otro valor, de eun objeto, usmaos THIS
+
+
+let person13 = {
+    name: "Jonh Connor",
+    age: 29,
+    alias: "comida rica",
+    walk: function () {
+        console.log("la persona camina")
+    },
+    job: {
+        name: "programador",
+        exp: 15,
+        work: function () {
+            console.log(`${person13.name} de ${this.exp} años de experiencia trabaja como ${this.name}`)
+        }
+    }
+}
+
+console.log(person13)
+person13.job.work()
+
+//funciones como objetos
+
+//---sirve para crear quiza una persona de forma generica, mediante una funcion
+
+function Person(name, age) { //deberia ser una clase
+    this.name = name
+    this.age = age
+}
+let person5 = new Person("brais", 37)
+console.log(person5)
+console.log(person5.name)
+console.log(typeof person5)
+console.log(typeof person4)
